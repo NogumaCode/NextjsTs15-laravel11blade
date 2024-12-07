@@ -1,6 +1,7 @@
 import Header from "@/components/Header/page";
 import Service from "@/components/Service/page";
-import Slider from "@/components/Slider/page";
+import Slider from "@/components/Sidebar/page";
+import serviceData from '@/data/service.json';
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
       <Header />
       <main className="content">
         <Slider />
-        <Service />
+        <Service data={serviceData} />
       </main>
     </div>
   );
