@@ -5,6 +5,13 @@ import React from 'react';
 
 
 const TopNav = () => {
+  const navList =[
+    { label: "facebook", path: "https://facebook.com/", icon:"icon-facebook" },
+    { label: "linkendin", path: "https://linkendin.com/", icon:"icon-in" },
+    { label: "facebook", path: "https://twitter.com/", icon:"icon-twitter" },
+    { label: "facebook", path: "https://Instagram.com/", icon:"icon-insta" },
+    { label: "facebook", path: "https://youtube.com/", icon:"icon-youtube" },
+  ]
   return (
     <div className='bg-slate-600'>
       <div className="container flex items-center justify-between h-[44px]">
@@ -21,17 +28,10 @@ const TopNav = () => {
         <div className="right-block flex items-center gap-5">
           <div className="line h-6 w-px bg-grey max-sm:hidden"></div>
           <div className="list-social flex items-center gap-2.5 max-sm:hidden">
-            <Link className='item items-center  rounded-full w-7 h-7 border-grey border-2 flex justify-center' href="https://facebook.com/" target='_blank'>
-            <i className="icon-facebook text-sm"></i></Link>
-            <Link className='item items-center  rounded-full w-7 h-7 border-grey border-2 flex justify-center' href="https://linkendin.com/" target='_blank'>
-            <i className="icon-in text-[10px]"></i></Link>
-            <Link className='item items-center  rounded-full w-7 h-7 border-grey border-2 flex justify-center' href="https://twitter.com/" target='_blank'>
-            <i className="icon-twitter text-[10px]"></i></Link>
-            <Link className='item items-center  rounded-full w-7 h-7 border-grey border-2 flex justify-center' href="https://Instagram.com/" target='_blank'>
-            <i className="icon-insta text-[10px]"></i></Link>
-            <Link className='item items-center  rounded-full w-7 h-7 border-grey border-2 flex justify-center' href="https://youtube.com/" target='_blank'>
-            <i className="icon-youtube text-[10px]"></i></Link>
-
+            {navList.map((item,index)=>(
+              <Link key={index} className='item items-center  rounded-full w-7 h-7 border-grey border-2 flex justify-center' href={item.path} target='_blank'>
+              <i className={`${item.icon} text-sm`}></i></Link>
+            ))}
           </div>
         </div>
 
