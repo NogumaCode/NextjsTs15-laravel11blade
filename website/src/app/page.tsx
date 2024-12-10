@@ -1,3 +1,4 @@
+import CaseStudy from "@/components/case_study/page";
 import Header from "@/components/header/page";
 import PaymentGateway from "@/components/payment_gateway/page";
 import Service from "@/components/service/page";
@@ -12,6 +13,7 @@ export default function Home() {
         <Slider />
         <Service data={serviceData} />
         <PaymentGateway />
+        <CaseStudy />
       </main>
     </div>
   );
