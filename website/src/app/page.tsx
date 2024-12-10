@@ -1,5 +1,6 @@
-import Header from "@/components/Header/page";
-import Service from "@/components/Service/page";
+import Header from "@/components/header/page";
+import PaymentGateway from "@/components/payment_gateway/page";
+import Service from "@/components/service/page";
 import Slider from "@/components/Sidebar/page";
 import serviceData from '@/data/service.json';
 
@@ -10,6 +11,7 @@ export default function Home() {
       <main className="content">
         <Slider />
         <Service data={serviceData} />
+        <PaymentGateway />
       </main>
     </div>
   );

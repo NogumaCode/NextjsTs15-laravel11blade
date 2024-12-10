@@ -1,6 +1,7 @@
 import React from 'react';
-import TopNav from './TopNav/page';
-import Menu from './Menu/page';
+import TopNav from './top_nav/page';
+import Menu from './menu/page';
+
 
 
 const Header = () => {

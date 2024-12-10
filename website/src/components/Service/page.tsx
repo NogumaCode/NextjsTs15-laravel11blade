@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import ServiceItem from "./item";
 
+
 interface ServiceItemProps {
   icon: string;
   category: string;
@@ -22,10 +23,7 @@ const isInView = useInView(ref as React.RefObject<Element>, { once: true });
   return (
 
     <div>
-       <section
-        className="service-block lg:mt-[100px] sm:mt-16 mt-10"
-         // ref を設定
-      >
+       <section className="service-block lg:mt-[100px] sm:mt-16 mt-10">
         <div className="container">
           <h3 className="heading3 text-center">Our Services</h3>
           <div ref={ref}
