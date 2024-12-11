@@ -1,0 +1,24 @@
+.video-block.style-six .container .video {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: radial-gradient(63.94% 63.94% at 50% 0%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%), rgba(104, 105, 107, 0.2);
+    backdrop-filter: blur(6px);
+}
+
+.video-block.style-six .container .video img {
+    object-fit: cover;
+}
+
+.video-block.style-six .container .video i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.video-block.style-six .container .video i:hover {
+    background-color: var(--orange);
+    color: var(--white);
+}

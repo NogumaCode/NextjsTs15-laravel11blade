@@ -22,6 +22,18 @@ const Menu = () => {
   ];
 
   useEffect(() => {
+    if (openMenuMobile) {
+      document.body.style.overflow = "hidden"; // スクロール無効化
+    } else {
+      document.body.style.overflow = ""; // スクロール有効化
+    }
+
+    return () => {
+      document.body.style.overflow = ""; // クリーンアップ
+    };
+  }, [openMenuMobile]);
+
+  useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setFixedHeader(true);
@@ -30,11 +42,24 @@ const Menu = () => {
       }
     };
 
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        setOpenMenuMobile(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    setOpenMenuMobile(false);
+  }, [pathname]);
 
   return (
     <>

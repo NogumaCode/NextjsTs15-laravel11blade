@@ -9,10 +9,9 @@ const ServiceItem = ({
 }: ServiceItemType) => {
   return (
     <div className="service-item p-8 bg-white rounded-lg border border-line hover-box-shadow">
-      <Link
-        className="service-item-main h-full "
-        href={"/service/service-details/"}
-      >
+       <Link className='service-item-main h-full' href={'/service/service-details/[slug]'}
+            as={`/service/service-details/${title.toLowerCase().replace(/ /g,'-')}`}
+            >
         <div className="heading flex items-center justify-between">
           <i className={`${icon} text-blue md:text-6xl text-5xl`}></i>
           <div className="number heading3 text-placeholder text-slate-400">

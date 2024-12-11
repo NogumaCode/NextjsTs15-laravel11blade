@@ -313,9 +313,6 @@
 }
 
 @media (max-width: 576px) {
-  .header-menu {
-    height: 60px;
-  }
 
   .header-menu .menu-left-block .menu-logo {
     width: 120px;

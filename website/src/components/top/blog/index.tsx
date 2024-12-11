@@ -1,5 +1,6 @@
+import { BlogItemType } from "@/types/content";
 import BlogItem from "./item";
-import { BlogItemType } from "@/types/blog";
+
 
 interface LatestBlogProps {
   data: BlogItemType[];
@@ -13,7 +14,7 @@ const LatestBlog = ({ data }: LatestBlogProps) => {
         <div className="list grid lg:grid-cols-3 sm:grid-cols-2 gap-8 md:mt-10 mt-6">
           {data &&
             data
-              .slice(0, 3)
+              .slice(0, 4)
               .map((item, index) => <BlogItem data={item} key={index} />)}
         </div>
       </div>
