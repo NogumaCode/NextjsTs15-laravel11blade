@@ -1,5 +1,5 @@
 import BlogItem from "./item";
-import type { BlogItemType } from "@/types/blog";
+import { BlogItemType } from "@/types/blog";
 
 interface LatestBlogProps {
   data: BlogItemType[];

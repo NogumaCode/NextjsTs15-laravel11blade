@@ -1,32 +1,32 @@
-'use client'
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-import * as Icon from '@phosphor-icons/react/dist/ssr';
-import Image from 'next/image';
-import Link from 'next/link';
-import 'swiper/css/bundle';
+"use client";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import * as Icon from "@phosphor-icons/react/dist/ssr";
+import Image from "next/image";
+import Link from "next/link";
+import "swiper/css/bundle";
 
 const Slider = () => {
   // スライドデータを定義
   const slides = [
     {
       id: 1,
-      image: '/images/slider/one.jpg',
-      title: ['Simplify and Secure', 'Our Solution'],
+      image: "/images/slider/one.jpg",
+      title: ["Simplify and Secure", "Our Solution"],
       description:
-        'justify items along the center of the container’s main axis <br/>justify items along the center of the container’s main axis',
-      link: '/service',
-      linkText: 'Discover Now',
+        "justify items along the center of the container’s main axis <br/>justify items along the center of the container’s main axis",
+      link: "/service",
+      linkText: "Discover Now",
     },
     {
       id: 2,
-      image: '/images/slider/two.jpg',
-      title: ['Easy to Use', 'Our Solution'],
+      image: "/images/slider/two.jpg",
+      title: ["Easy to Use", "Our Solution"],
       description:
-        'justify items along the center of the container’s main axis <br/>justify items along the center of the container’s main axis',
-      link: '/service',
-      linkText: 'Discover Now',
+        "justify items along the center of the container’s main axis <br/>justify items along the center of the container’s main axis",
+      link: "/service",
+      linkText: "Discover Now",
     },
   ];
 
@@ -43,8 +43,8 @@ const Slider = () => {
           spaceBetween={0}
           slidesPerView={1}
           navigation={{
-            prevEl: '.prev-arrow',
-            nextEl: '.next-arrow',
+            prevEl: ".prev-arrow",
+            nextEl: ".next-arrow",
           }}
           loop={true}
           pagination={{ clickable: true }}
@@ -77,8 +77,12 @@ const Slider = () => {
                     <div className="heading2">
                       {slide.title.map((text, index) => (
                         <div key={index} className="relative overflow-hidden">
-                          <span className="block relative overflow-hidden">{text}</span>
-                          <span className="block absolute top-0 left-0 w-full h-full">{text}</span>
+                          <span className="block relative overflow-hidden">
+                            {text}
+                          </span>
+                          <span className="block absolute top-0 left-0 w-full h-full">
+                            {text}
+                          </span>
                         </div>
                       ))}
                     </div>

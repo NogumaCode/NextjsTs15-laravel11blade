@@ -1,8 +1,7 @@
-
-import type { BlogItemType } from "@/types/blog";
-import { CalendarBlank } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import Link from "next/link";
+import { CalendarBlank } from "@phosphor-icons/react/dist/ssr";
+import type { BlogItemType } from "@/types/blog";
 
 interface BlogItemProps {
   data: BlogItemType;

@@ -43,7 +43,7 @@ const PaymentGatewayService = () => {
                   opacity: isInView ? 1 : undefined,
                 }}
               >
-                <div className="bg-img relative w-full h-[400px]">
+                <div className="bg-img relative w-full h-[700px]">
                   <Image
                     src="/images/gateway2-bg.webp"
                     alt="image"
