@@ -1,0 +1,132 @@
+
+
+
+
+#footer {
+  /* Base styles for #footer */
+}
+
+@media (max-width: 1023.99px) {
+  #footer .cta-block {
+    height: 140px;
+  }
+  #footer .cta-block .container {
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+  #footer .footer-block .row .col-3:first-child {
+    max-width: 35%;
+    flex: 0 0 35%;
+  }
+  #footer .footer-block .row .col-6 {
+    max-width: 55%;
+    flex: 0 0 55%;
+  }
+  #footer .footer-block .row .col-6 .footer-navigate {
+    gap: 0;
+    justify-content: space-between;
+  }
+  #footer .footer-block .row .col-3:last-child {
+    margin-top: 30px;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 767.99px) {
+  #footer .cta-block {
+    height: 180px;
+  }
+  #footer .cta-block .container {
+    text-align: center;
+  }
+  #footer .footer-block .row .col-3:first-child {
+    flex: 0 0 80%;
+    max-width: 80%;
+  }
+  #footer .footer-block .row .col-6 {
+    margin-top: 30px;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  #footer .footer-block .row .col-3:last-child {
+    flex: 0 0 80%;
+    max-width: 80%;
+  }
+  #footer .footer-bottom {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 575.99px) {
+  #footer .footer-block .row .col-3:first-child {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  #footer .footer-block .row .col-6 {
+    margin-top: 30px;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  #footer .footer-block .row .col-6 .footer-navigate {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  #footer .footer-block .row .col-6 .footer-nav-item {
+    width: 100%;
+  }
+  #footer .footer-block .row .col-3:last-child {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+#footer.style-three .footer-block {
+  background-color: #130E38;
+}
+
+#footer.style-three .footer-block .company-contact svg path:nth-child(4) {
+  fill: var(--gradient);
+}
+
+#footer.style-three .footer-block .company-contact .send-block button {
+  background-color: var(--gradient);
+}
+
+#footer.style-three .footer-block .company-contact .send-block input:focus {
+  border-color: var(--gradient);
+}
+
+#footer.style-four .footer-block .company-contact svg path:nth-child(4) {
+  fill: var(--success);
+}
+
+#footer.style-four .footer-block .company-contact .send-block button {
+  background-color: var(--success);
+}
+
+#footer.style-four .footer-block .company-contact .send-block input:focus {
+  border-color: var(--success);
+}
+
+#footer.style-five .footer-block {
+  background-color: var(--black);
+}
+
+#footer.style-six .footer-block {
+  background-color: var(--black);
+}
+
+#footer.style-six .footer-block .company-contact svg path:nth-child(4) {
+  fill: var(--orange);
+}
+
+#footer.style-six .footer-block .company-contact .send-block button {
+  background-color: var(--orange);
+}
+
+#footer.style-six .footer-block .company-contact .send-block input:focus {
+  border-color: var(--orange);
+}
