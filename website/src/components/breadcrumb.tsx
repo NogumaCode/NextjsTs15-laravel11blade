@@ -1,9 +1,9 @@
 import { CaretDoubleRight } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import Link from "next/link";
-import { AboutType } from "@/types/about";
+import { BreadType } from "@/types/content";
 
-const Breadcrumb = ({ link, img, title, desc }: AboutType) => {
+const Breadcrumb = ({ link, img, title, desc }: BreadType) => {
   return (
     <div className="breadcrumb-block w-full lg:h-[280px] sm:h-[300px] h-[320px] relative">
       <div className="bg-img w-full h-full absolute top-0 left-0 z-[-1]">

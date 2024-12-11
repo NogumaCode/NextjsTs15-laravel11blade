@@ -1,9 +1,27 @@
+@import '../styles/icons/style.css';
+@import '../styles/global.css';
+@import '../styles/header.css';
+@import '../styles/footer.css';
+@import '../styles/slider.css';
+@import '../styles/pagination.css';
+@import '../styles/modal.css';
+@import '../styles/text-has-line-before.css';
+@import '../styles/section/about.css';
+@import '../styles/section/payment-gateway.css';
+@import '../styles/section/blog-list.css';
+@import '../styles/section/list-partner.css';
+@import '../styles/section/service.css';
+@import '../styles/section/card.css';
+@import '../styles/section/project.css';
+@import '../styles/section/counter.css';
+@import '../styles/section/testimonial.css';
+@import '../styles/section/form-request.css';
+@import '../styles/section/our-team.css';
+@import '../styles/section/case-studies.css';
+@import '../styles/section/list-pricing.css';
+@import '../styles/section/questionFAQ.css';
+@import '../styles/animate.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer utilities {
-  .swiper-slide-active .slider-item {
-    @apply opacity-100;
-  }
-}

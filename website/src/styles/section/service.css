@@ -57,19 +57,7 @@
     top: -40px;
 }
 
-.more-infor .list-nav{
-    display:flex;
-    flex-direction: column;
 
-}
-.more-infor a{
-    padding:0.5rem;
-    display:inline-block;
-}
-.more-infor a:hover{
-    background-color: var( --blue);
-    color:var(--white);
-}
 
 @media (max-width: 767.99px) {
     .service-block.style-second .list-service .service-item .icon {

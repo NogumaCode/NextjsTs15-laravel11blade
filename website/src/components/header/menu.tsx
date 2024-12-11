@@ -32,7 +32,7 @@ const Menu = () => {
       document.body.style.overflow = ""; // クリーンアップ
     };
   }, [openMenuMobile]);
-  
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -56,6 +56,10 @@ const Menu = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    setOpenMenuMobile(false);
+  }, [pathname]);
 
   return (
     <>

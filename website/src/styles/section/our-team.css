@@ -1,0 +1,69 @@
+.our-team-block .container .list-member .col-12 .bg-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.our-team-block .container .list-member .col-12 .bg-img img {
+    transition: all ease 0.5s;
+}
+
+.our-team-block .container .list-member .col-12 .bg-img .list-social {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    right: -80px;
+    border-radius: 8px;
+    padding: 12px 8px;
+    transition: all ease-in-out 0.5s;
+}
+
+.our-team-block .container .list-member .col-12 .bg-img .list-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.our-team-block .container .list-member .col-12 .bg-img .list-social a i {
+    margin-left: 2px;
+}
+
+.our-team-block .container .list-member .col-12 .bg-img .list-social a i::before {
+    color: var(--on-surface);
+}
+
+.our-team-block .container .list-member .col-12 .bg-img .list-social a:hover {
+    background-color: var(--blue);
+}
+
+.our-team-block .container .list-member .col-12 .bg-img .list-social a:hover i::before {
+    color: var(--white);
+}
+
+.our-team-block .container .list-member .col-12 .infor .name {
+    transition: all ease-in-out 0.3s;
+}
+
+.our-team-block .container .list-member .col-12:hover {
+    cursor: pointer;
+}
+
+.our-team-block .container .list-member .col-12:hover .bg-img img {
+    transform: scale(1.07);
+}
+
+.our-team-block .container .list-member .col-12:hover .bg-img .list-social {
+    transition: all ease-in-out 0.5s;
+    right: 20px;
+}
+
+.our-team-block .container .list-member .col-12:hover .infor .name {
+    color: var(--blue);
+}

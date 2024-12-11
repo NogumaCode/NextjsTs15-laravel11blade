@@ -3,14 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ServiceDetails = () => {
+const BlogDetails = () => {
   return (
     <>
       <main className="content">
         <Breadcrumb
-          link="Our Services Details"
+          link="Blog Details"
           img="/images/header.webp"
-          title="Our Services Details"
+          title="Blog Details"
           desc="The jobs report soundly beat expectations, with job gains broadly spread across the economy and about 60% higher"
         />
 
@@ -56,14 +56,11 @@ const ServiceDetails = () => {
 
               <div className="w-full xl:w-1/4">
                 <div className="more-infor border border-line rounded-xl py-8 px-8">
-                  <div className="heading6">The best our Services</div>
-                  <div className="body3 text-secondary mt-2">
-                    Lorem Ipsum passages, and more recently with desktop
-                  </div>
+                  <div className="heading6">Categories</div>
 
                   <div className="list-nav mt-4">
                     <Link
-                      className="nav-item rounded-lg flex-between p-12"
+                      className="nav-item rounded-lg flex-between p-6"
                       href="/"
                     >
                       <div className="text-button text-secondary">
@@ -72,7 +69,7 @@ const ServiceDetails = () => {
                     </Link>
 
                     <Link
-                      className="nav-item rounded-lg flex-between p-12"
+                      className="nav-item rounded-lg flex-between p-6"
                       href="/"
                     >
                       <div className="text-button text-secondary">
@@ -81,7 +78,7 @@ const ServiceDetails = () => {
                     </Link>
 
                     <Link
-                      className="nav-item rounded-lg flex-between p-12"
+                      className="nav-item rounded-lg flex-between p-6"
                       href="/"
                     >
                       <div className="text-button text-secondary">
@@ -90,7 +87,7 @@ const ServiceDetails = () => {
                     </Link>
 
                     <Link
-                      className="nav-item rounded-lg flex-between p-12"
+                      className="nav-item rounded-lg flex-between p-6"
                       href="/"
                     >
                       <div className="text-button text-secondary">
@@ -102,12 +99,7 @@ const ServiceDetails = () => {
 
                 <div className="ads-block rounded-lg md:mt-10 mt-6 relative">
                   <div className="bg-img">
-                    <Image
-                      width={5000}
-                      height={5000}
-                      src="/images/ads.webp"
-                      alt="img"
-                    />
+                    <Image width={5000} height={5000} src="/images/ads.webp" alt="img" />
                   </div>
 
                   <div className="text flex flex-col justify-between absolute left-0 top-0 w-full h-full p-8">
@@ -136,4 +128,4 @@ const ServiceDetails = () => {
   );
 };
 
-export default ServiceDetails;
+export default BlogDetails;

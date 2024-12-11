@@ -1,4 +1,4 @@
-import Breadcrumb from "@/components/about/breadcrumb";
+import Breadcrumb from "@/components/breadcrumb";
 import Service from "@/components/top/service";
 import serviceData from "@/data/service.json";
 import Image from "next/image";
