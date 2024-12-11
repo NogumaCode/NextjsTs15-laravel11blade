@@ -8,19 +8,19 @@
 @use 'text-has-line-before.scss';
 @use 'section/about.css';
 @use 'section/payment-gateway.scss';
-@use 'section/blog-list.scss';
+@use 'section/blog-list.css';
 @use 'section/list-partner.scss';
-@use 'section/service.scss';
-@use 'section/card.scss';
+@use 'section/service.css';
+@use 'section/card.css';
 @use 'section/project.scss';
-@use 'section/counter.scss';
+@use 'section/counter.css';
 @use 'section/testimonial.scss';
 @use 'section/form-request.scss';
 @use 'section/our-team.scss';
-@use 'section/case-studies.scss';
+@use 'section/case-studies.css';
 @use 'section/list-pricing.scss';
 @use 'section/questionFAQ.scss';
-// @use "animate.css";
+@use "animate.css";
 
 
 @tailwind base;

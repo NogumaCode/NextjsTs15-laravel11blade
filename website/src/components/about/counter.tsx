@@ -2,7 +2,7 @@ import { CounterType } from '@/types/about';
 import React from 'react';
 
 
-const Counter = ({classname}:CounterType) => {
+const AboutCounter = ({classname}:CounterType) => {
   return (
     <div className='container bg-slate-100 rounded-md pt-8'>
         <div className={` counter-block ${classname} `}>
@@ -65,4 +65,4 @@ const Counter = ({classname}:CounterType) => {
   );
 };
 
-export default Counter;
+export default AboutCounter;

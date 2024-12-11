@@ -1,0 +1,78 @@
+.service-block .service-item .read-more:hover svg {
+    transform: translateX(4px);
+}
+
+.service-block.style-three .service-item-main i::before {
+    color: var(--gradient);
+}
+
+.service-block.style-six .list-service .service-item {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: radial-gradient(50% 50% at 22.8% 0%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+    backdrop-filter: blur(6px);
+    position: relative;
+    height: 100%;
+    display: block;
+    transition: all 0.4s ease;
+}
+
+.service-block.style-six .list-service .service-item .icon {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(249, 249, 249, 0) 100%);
+    backdrop-filter: blur(17px);
+    position: absolute;
+    top: -50px;
+    transition: background-color 0.5s ease;
+}
+
+.service-block.style-six .list-service .service-item .icon i::before {
+    color: var(--white);
+}
+
+.service-block.style-six .list-service .service-item:hover {
+    margin-top: -10px;
+}
+
+.service-block.style-six .list-service .service-item:hover .icon {
+    background: var(--orange);
+}
+
+@media (max-width: 1023.99px) {
+    .service-block.style-six .list-service .service-item:hover {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 767.99px) {
+    .service-block.style-six .list-service .service-item .icon {
+        top: -40px;
+    }
+}
+
+.service-block.style-second .list-service .service-item {
+    cursor: pointer;
+}
+
+.service-block.style-second .list-service .service-item .icon {
+    background-color: var(--orange);
+    top: -40px;
+}
+
+.more-infor .list-nav{
+    display:flex;
+    flex-direction: column;
+
+}
+.more-infor a{
+    padding:0.5rem;
+    display:inline-block;
+}
+.more-infor a:hover{
+    background-color: var( --blue);
+    color:var(--white);
+}
+
+@media (max-width: 767.99px) {
+    .service-block.style-second .list-service .service-item .icon {
+        top: -30px;
+    }
+}

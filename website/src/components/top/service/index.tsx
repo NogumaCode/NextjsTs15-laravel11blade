@@ -13,12 +13,10 @@ const Service = ({ data }: ServiceType) => {
   const isInView = useInView(ref as React.RefObject<Element>, { once: true });
   return (
     <div>
-      <section className="service-block lg:mt-[100px] sm:mt-16 mt-10">
+      <section className='service-block lg:mt-[100px] sm:mt-16 mt-10 mb-6' ref={ref}>
         <div className="container">
           <h3 className="heading3 text-center">Our Services</h3>
-          <div
-            ref={ref}
-            className="list-service grid lg:grid-cols-3 sm:grid-cols-2 gap-8 md:mt-10 mt-6 gap-y-10"
+          <div className="list-service grid lg:grid-cols-3 sm:grid-cols-2 gap-8 md:mt-10 mt-6 gap-y-10"
             style={{
               transform: isInView ? "none" : "translateY(60px)",
               opacity: isInView ? 1 : 0,
