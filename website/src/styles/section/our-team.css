@@ -64,6 +64,6 @@
     right: 20px;
 }
 
-.our-team-block .container .list-member .col-12:hover .infor .name {
+ .infor .name {
     color: var(--blue);
 }
