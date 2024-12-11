@@ -1,4 +1,4 @@
-export interface ServiceItemProps {
+export interface ServiceItemType {
   icon: string;
   category: string;
   title: string;

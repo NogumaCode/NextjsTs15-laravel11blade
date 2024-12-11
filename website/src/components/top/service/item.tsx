@@ -1,14 +1,12 @@
 import Link from "next/link";
-import React from "react";
-
-import { ServiceItemProps } from "@/types/service";
+import { ServiceItemType } from "@/types/service";
 
 const ServiceItem = ({
   icon,
   title,
   desc,
   number = 0,
-}: ServiceItemProps) => {
+}: ServiceItemType) => {
   return (
     <div className="service-item p-8 bg-white rounded-lg border border-line hover-box-shadow">
       <Link

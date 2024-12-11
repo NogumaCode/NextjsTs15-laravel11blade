@@ -427,109 +427,109 @@
     }
 }
 
-// @media (max-width: 1169.99px) {
-//     .header-menu {
-//         .menu-center-block {
-//             .nav-item {
-//                 padding: 0 8px;
-//             }
-//         }
-//     }
-// }
+@media (max-width: 1169.99px) {
+    .header-menu {
+        .menu-center-block {
+            .nav-item {
+                padding: 0 8px;
+            }
+        }
+    }
+}
 
-// @media (max-width: 1169.99px) and (min-width: 1023.99px) {
-//     .style-home-two {
-//         .header-menu {
-//             .menu-right-block {
-//                 gap: 6px;
+@media (max-width: 1169.99px) and (min-width: 1023.99px) {
+    .style-home-two {
+        .header-menu {
+            .menu-right-block {
+                gap: 6px;
 
-//                 .list-social {
-//                     gap: 4px;
+                .list-social {
+                    gap: 4px;
 
-//                     .item:last-child {
-//                         display: none;
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
+                    .item:last-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
 
-// @media (max-width: 1023.99px) {
-//     .header-menu {
-//         .menu-center-block {
-//             display: none;
-//         }
+@media (max-width: 1023.99px) {
+    .header-menu {
+        .menu-center-block {
+            display: none;
+        }
 
-//         .menu-right-block {
-//             .menu-humburger {
-//                 display: block;
-//                 padding-left: 24px;
+        .menu-right-block {
+            .menu-humburger {
+                display: block;
+                padding-left: 24px;
 
-//                 i {
-//                     font-size: 24px;
-//                 }
-//             }
-//         }
+                i {
+                    font-size: 24px;
+                }
+            }
+        }
 
-//         &.style-four {
-//             .menu-humburger {
-//                 display: block;
+        &.style-four {
+            .menu-humburger {
+                display: block;
 
-//                 i {
-//                     color: var(--white);
-//                     font-size: 24px;
-//                 }
-//             }
-//         }
-//     }
-// }
+                i {
+                    color: var(--white);
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
 
-// @media (max-width: 576px) {
-//     .header-menu {
-//         .h-20 {
-//             height: 60px;
+@media (max-width: 576px) {
+    .header-menu {
+        .h-20 {
+            height: 60px;
 
-//             .menu-left-block {
-//                 .menu-logo {
-//                     width: 120px;
-//                 }
-//             }
+            .menu-left-block {
+                .menu-logo {
+                    width: 120px;
+                }
+            }
 
-//             .menu-right-block {
+            .menu-right-block {
 
-//                 .icon-call,
-//                 .text {
-//                     display: none;
-//                 }
-//             }
-//         }
-//     }
+                .icon-call,
+                .text {
+                    display: none;
+                }
+            }
+        }
+    }
 
-//     .style-home-two {
-//         .header-menu {
-//             .menu-right-block {
+    .style-home-two {
+        .header-menu {
+            .menu-right-block {
 
-//                 .text-button-small,
-//                 .list-social {
-//                     display: none;
-//                 }
-//             }
-//         }
-//     }
+                .text-button-small,
+                .list-social {
+                    display: none;
+                }
+            }
+        }
+    }
 
-//     .header-menu.style-four {
-//         .h-88 {
-//             height: 60px;
-//         }
+    .header-menu.style-four {
+        .h-88 {
+            height: 60px;
+        }
 
-//         .menu-right-block {
-//             .button-block {
-//                 display: none;
-//             }
-//         }
-//     }
-// }
+        .menu-right-block {
+            .button-block {
+                display: none;
+            }
+        }
+    }
+}
 
 @keyframes showHeader {
     0% {

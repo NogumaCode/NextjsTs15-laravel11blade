@@ -55,18 +55,18 @@ const Footer = () => {
                 alt="img"
               />
               <div className="text caption1 text-white">
-                The jobs report soundly beat expectations, with job gains broadly spread across the economy and about
-                60% higher.
+                The jobs report soundly beat expectations, with job gains
+                broadly spread across the economy and about 60% higher.
               </div>
               <div className="list-social flex items-center gap-2">
                 {socialLinks.map((link, index) => (
                   <Link
                     key={index}
-                    className="item rounded-full w-7 h-7 border-2 border-gray flex items-center justify-center"
+                    className="item rounded-full w-8 h-8 border-2 border-gray flex items-center justify-center box-sizing"
                     href={link.href}
                     target="_blank"
                   >
-                    <i className={`${link.iconClass} text-sm`}></i>
+                    <i className={`${link.iconClass} text-sm ml-[0.1rem]`}></i>
                   </Link>
                 ))}
               </div>
@@ -78,7 +78,9 @@ const Footer = () => {
             <div className="footer-navigate flex items-center justify-center gap-20">
               {footerNavItems.map((navItem, index) => (
                 <div className="footer-nav-item" key={index}>
-                  <div className="item-heading text-button-sm text-white">{navItem.heading}</div>
+                  <div className="item-heading text-button-sm text-white">
+                    {navItem.heading}
+                  </div>
                   <ul className="list-nav mt-1 text-white">
                     {navItem.links.map((link, linkIndex) => (
                       <li className="mt-3" key={linkIndex}>
@@ -99,15 +101,21 @@ const Footer = () => {
           {/* Contact Info */}
           <div className="lg:w-1/4">
             <div className="company-contact">
-              <div className="heading text-button-sm text-white">NewsLetter</div>
+              <div className="heading text-button-sm text-white">
+                NewsLetter
+              </div>
               <div className="mt-3 flex items-start">
                 <div className="text">
-                  <div className="cpation2 text-surface text-white">Need Help? 24/7</div>
+                  <div className="cpation2 text-surface text-white">
+                    Need Help? 24/7
+                  </div>
                   <div className="fw-700 text-white mt-1">566-888-18181</div>
                 </div>
               </div>
               <div className="locate mt-3 flex items-center">
-                <div className="caption1 text-surface text-white">187 2th st, Easy Chicago. USA</div>
+                <div className="caption1 text-surface text-white">
+                  187 2th st, Easy Chicago. USA
+                </div>
               </div>
               <form className="send-block mt-5 flex items-center h-[45px] rounded-lg overflow-hidden">
                 <input
