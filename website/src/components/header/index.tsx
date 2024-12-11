@@ -1,6 +1,6 @@
 import React from 'react';
-import TopNav from './top_nav/page';
-import Menu from './menu/page';
+import TopNav from './top-nav';
+import Menu from './menu';
 
 
 

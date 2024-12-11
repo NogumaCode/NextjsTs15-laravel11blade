@@ -2,8 +2,7 @@ import Link from "next/link";
 import { CaretDoubleRight } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 
-function CaseStudy() {
-
+const CaseStudy = () => {
   const caseStudyData = [
     {
       src: "/images/casefour.webp",
@@ -61,7 +60,7 @@ function CaseStudy() {
 
         <div className="list-case-study md:mt-10 mt-6">
           <div className="list grid lg:grid-cols-4 sm:grid-cols-2">
-          {caseStudyData.map((item, index) => (
+            {caseStudyData.map((item, index) => (
               <div className="w-full" key={index}>
                 <div className="case-study-item">
                   <div className="bg-img">
@@ -96,6 +95,6 @@ function CaseStudy() {
       </section>
     </div>
   );
-}
+};
 
 export default CaseStudy;

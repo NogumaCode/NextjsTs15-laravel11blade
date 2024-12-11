@@ -35,23 +35,23 @@ const Menu = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
+
   return (
     <>
-      <div className={`header-menu bg-white ${fixedHeader ? "fixed" : ""}`}>
-        <div className="container flex items-center justify-between h-20">
-          <Link className="menu-left-block" href="/">
-            <Image
-              src={"/images/Logo.png"}
-              width={2000}
-              height={1000}
-              alt="logo"
-              priority={true}
-              className="w-[149px] max-sm:w-[132px]"
-            />
-          </Link>
-          <div className="menu-center-block h-full ">
-            <ul className="menu-nav flex items-center xl:gap-2 h-full ">
+    <div className={`header-menu bg-white ${fixedHeader ? 'fixed' : ''} `}>
+            <div className='container flex items-center justify-between h-20'>
+                <Link className='menu-left-block' href="/">
+                <Image
+                    src={'/images/Logo.png'}
+                    width={2000}
+                    height={1000}
+                    alt='logo'
+                    priority={true}
+                    className='w-[149px] max-sm:w-[132px]'
+                />
+            </Link>
+            <div className='menu-center-block h-full'>
+            <ul className='menu-nav flex items-center xl:gap-2 h-full'>
               {menuItems.map((item, index) => (
                 <li
                   key={index}
@@ -85,7 +85,7 @@ const Menu = () => {
             </div>
           </div>
         </div>
-        <div id="menu-mobile-block" className={`${openMenuMobile ? "open" : ""}`}>
+        <div id='menu-mobile-block' className={` ${openMenuMobile && 'open'} `}>
           <div className="menu-mobile-main">
             <div className="container">
               <ul className="menu-nav-mobile h-full pt-1 pb-1">

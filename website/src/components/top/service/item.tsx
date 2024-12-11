@@ -1,20 +1,13 @@
 import Link from "next/link";
 import React from "react";
 
-interface ServiceItemProps {
-  icon: string;
-  category: string;
-  title: string;
-  desc: string;
-  shortDesc: string;
-  number: number; // 追加: 順番を表示するなどの用途
-}
+import { ServiceItemProps } from "@/types/service";
 
 const ServiceItem = ({
   icon,
   title,
   desc,
-  number,
+  number = 0,
 }: ServiceItemProps) => {
   return (
     <div className="service-item p-8 bg-white rounded-lg border border-line hover-box-shadow">
