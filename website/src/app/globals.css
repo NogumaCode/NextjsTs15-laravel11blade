@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .swiper-slide-active .slider-item {
+    @apply opacity-100;
+  }
+}

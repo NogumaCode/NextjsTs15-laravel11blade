@@ -2,15 +2,7 @@
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import ServiceItem from "./item";
-
-
-interface ServiceItemProps {
-  icon: string;
-  category: string;
-  title: string;
-  desc: string;
-  shortDesc: string;
-}
+import { ServiceItemProps } from "@/types/service";
 
 interface ServiceProps {
   data: ServiceItemProps[];
