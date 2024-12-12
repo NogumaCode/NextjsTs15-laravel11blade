@@ -31,8 +31,7 @@ const ServiceDetails = () => {
                   </div>
                   <div className="body2 text-secondary mt-4">
                     Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
+                    typesetting industry.  when an unknown
                     printer took a galley of type and scrambled it to make a
                     type specimen book. It has survived not only five centuries,
                     but also the leap into electronic typesetting, remaining
@@ -41,8 +40,7 @@ const ServiceDetails = () => {
                     passages, and more recently with desktop publishing software
                     like Aldus PageMaker including versions of Lorem Ipsum.
                     Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
+                    typesetting industry. when an unknown
                     printer took a galley of type and scrambled it to make a
                     type specimen book. It has survived not only five centuries,
                     but also the leap into electronic typesetting, remaining
@@ -112,7 +110,7 @@ const ServiceDetails = () => {
 
                   <div className="text flex flex-col justify-between absolute left-0 top-0 w-full h-full p-8">
                     <div className="title">
-                      <div className="heading5 text-white">Let's Talk</div>
+                      <div className="heading5 text-white">Lets Talk</div>
                       <div className="body3 text-white mt-4">
                         If you have project contact us
                       </div>
