@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
+    
     public function AdminLogout(Request $request)
     {
         // 管理者用ガードでログアウト
