@@ -8,53 +8,71 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     */
-    public function edit(Request $request): View
-    {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
-    }
+    public function AdminProfile(){
+        $id = Auth::user()->id;
+        $profileData = User::find($id);
+        return view('admin.profile',compact('profileData'));
 
-    /**
-     * Update the user's profile information.
-     */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
-    {
-        $request->user()->fill($request->validated());
+     }
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+     public function ProfileStore(Request $request){
+        $id = Auth::user()->id;
+        $data = User::find($id);
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $oldPhotoPath = $data->image;
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = time().'.'.$file->getClientOriginalExtension(); // 2323.jpg
+            $file->move(public_path('upload/user_images'),$filename);
+            $data->image = $filename;
+            if ($oldPhotoPath && $oldPhotoPath !== $filename) {
+                $this->deleteOldImage($oldPhotoPath);
+             }
         }
+        $data->save();
+        $notification = array(
+            'message' => 'プロフィールを更新しました。',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+     }
 
-        $request->user()->save();
+     private function deleteOldImage(string $oldPhotoPath): void {
+        $fullPath = public_path('upload/user_images/'.$oldPhotoPath);
+        if (file_exists($fullPath)) {
+            unlink($fullPath);
+        }
+     }
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
-    }
-
-    /**
-     * Delete the user's account.
-     */
-    public function destroy(Request $request): RedirectResponse
-    {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
+     public function PasswordUpdate(Request $request){
+        $user = Auth::user();
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed'
         ]);
+        if (!Hash::check($request->old_password,$user->password)) {
+            $notification = array(
+            'message' => 'Old Password does not Match!',
+            'alert-type' => 'error'
+        );
 
-        $user = $request->user();
-
+        return back()->with($notification);
+        }
+        User::whereId($user->id)->update([
+            'password' => Hash::make($request->new_password)
+            ]);
         Auth::logout();
-
-        $user->delete();
-
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return Redirect::to('/');
+        $notification = array(
+            'message' => 'Password Changed Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('login')->with($notification);
     }
 }
