@@ -29,6 +29,14 @@
                 <li class="menu-title">Menu</li>
 
                 <li>
+                    <a href="{{ route('dashboard') }}" class="tp-link">
+                        <i data-feather="home"></i>
+                        <span> Dashboard </span>
+                    </a>
+                </li>
+
+
+                {{-- <li>
                     <a href="#sidebarDashboards" data-bs-toggle="collapse">
                         <i data-feather="home"></i>
                         <span> Dashboard </span>
@@ -44,7 +52,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
                 <!-- <li>
                         <a href="landing.html" target="_blank">
@@ -69,7 +77,7 @@
                             <li>
                                 <a href="auth-register.html" class="tp-link">Register</a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a href="auth-recoverpw.html" class="tp-link">Recover Password</a>
                             </li>
                             <li>
@@ -83,7 +91,7 @@
                             </li>
                             <li>
                                 <a href="auth-logout.html" class="tp-link">Logout</a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </li>
@@ -102,7 +110,7 @@
                             <li>
                                 <a href="error-500.html" class="tp-link">Error 500</a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a href="error-503.html" class="tp-link">Error 503</a>
                             </li>
                             <li>
@@ -110,12 +118,12 @@
                             </li>
                             <li>
                                 <a href="offline-page.html" class="tp-link">Offline Page</a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a href="#sidebarExpages" data-bs-toggle="collapse">
                         <i data-feather="file-text"></i>
                         <span> Utility </span>
@@ -152,14 +160,8 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
-                <li>
-                    <a href="calendar.html" class="tp-link">
-                        <i data-feather="calendar"></i>
-                        <span> Calendar </span>
-                    </a>
-                </li>
 
                 <li class="menu-title mt-2">General</li>
 
@@ -177,7 +179,7 @@
                             <li>
                                 <a href="ui-alerts.html" class="tp-link">Alerts</a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a href="ui-badges.html" class="tp-link">Badges</a>
                             </li>
                             <li>
@@ -236,19 +238,19 @@
                             </li>
                             <li>
                                 <a href="ui-typography.html" class="tp-link">Typography</a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a href="widgets.html" class="tp-link">
                         <i data-feather="aperture"></i>
                         <span> Widgets </span>
                     </a>
-                </li>
+                </li> --}}
 
-                <li>
+                {{-- <li>
                     <a href="#sidebarAdvancedUI" data-bs-toggle="collapse">
                         <i data-feather="cpu"></i>
                         <span> Extended UI </span>
@@ -270,9 +272,9 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
-                <li>
+                {{-- <li>
                     <a href="#sidebarIcons" data-bs-toggle="collapse">
                         <i data-feather="award"></i>
                         <span> Icons </span>
@@ -288,9 +290,9 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
-                <li>
+                {{-- <li>
                     <a href="#sidebarForms" data-bs-toggle="collapse">
                         <i data-feather="briefcase"></i>
                         <span> Forms </span>
@@ -312,9 +314,9 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
-                <li>
+                {{-- <li>
                     <a href="#sidebarTables" data-bs-toggle="collapse">
                         <i data-feather="table"></i>
                         <span> Tables </span>
@@ -330,9 +332,9 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
-                <li>
+                {{-- <li>
                     <a href="#sidebarCharts" data-bs-toggle="collapse">
                         <i data-feather="pie-chart"></i>
                         <span> Apex Charts </span>
@@ -396,7 +398,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
                 <li>
                     <a href="#sidebarMaps" data-bs-toggle="collapse">

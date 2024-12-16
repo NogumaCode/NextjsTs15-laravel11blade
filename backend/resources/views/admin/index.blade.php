@@ -238,7 +238,7 @@
         </div>
         <!-- End Monthly Sales -->
 
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-md-6 col-xl-6">
                 <div class="card">
 
@@ -403,7 +403,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> --}}
 
     </div> <!-- container-fluid -->
 </div>
