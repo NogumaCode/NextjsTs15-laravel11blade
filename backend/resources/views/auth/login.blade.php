@@ -44,14 +44,20 @@
 
                                         <div class="form-group mb-3">
                                             <label for="email" class="form-label">メールアドレス</label>
-                                            <input class="form-control" type="email" id="email" name="email" required
+                                            <input class="form-control @error('email') is-invalid @enderror " type="email" id="email" name="email" required
                                                 placeholder="Enter your email">
+                                                @error('email')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                         </div>
 
                                         <div class="form-group mb-3">
                                             <label for="password" class="form-label">パスワード</label>
-                                            <input class="form-control" type="password" name="password" required id="password"
+                                            <input class="form-control @error('password') is-invalid @enderror " type="password" name="password" required id="password"
                                                 placeholder="Enter your password">
+                                                @error('password')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                         </div>
 
                                         <div class="form-group d-flex mb-3">
@@ -80,8 +86,8 @@
                                     <div class="saprator my-4"><span>or sign in with</span></div>
 
                                     <div class="text-center text-muted mb-4">
-                                        <p class="mb-0">Don't have an account ?<a class='text-primary ms-2 fw-medium'
-                                                href='{{ route('register') }}'>Sing up</a></p>
+                                        <p class="mb-0">アカウントをお持ちでない方<a class='text-primary ms-2 fw-medium'
+                                                href='{{ route('register') }}'>新規登録</a></p>
                                     </div>
 
                                     {{-- <div class="row">
@@ -123,8 +129,8 @@
                 <div class="col-xl-7">
                     <div class="account-page-bg p-md-5 p-4">
                         <div class="text-center">
-                            <h3 class="text-dark mb-3 pera-title">Quick, Effective, and Productive With Tapeli Admin
-                                Dashboard</h3>
+                            {{-- <h3 class="text-dark mb-3 pera-title">Quick, Effective, and Productive With Tapeli Admin
+                                Dashboard</h3> --}}
                             <div class="auth-image">
                                 <img src="{{ asset('backend/assets/images/authentication.svg') }}"
                                     class="mx-auto img-fluid" alt="images" />
