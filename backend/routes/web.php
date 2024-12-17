@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\GatewayController;
+use App\Http\Controllers\Backend\TestimonialController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -59,4 +61,13 @@ Route::controller(GatewayController::class)->group(function(){
  	Route::post('/update/gateway/one', 'UpdateGetWayOne')->name('update.gateway.one');
     Route::get('/gateway/two', 'GetWayTwo')->name('gateway.two');
     Route::post('/update/gateway/two', 'UpdateGetWayTwo')->name('update.gateway.two');
+});
+
+Route::controller(TestimonialController::class)->group(function(){
+    Route::get('/all/testimonial', 'AllTestimonial')->name('all.testimonial');
+    Route::get('/add/testimonial', 'AddTestimonial')->name('add.testimonial');
+    Route::post('/store/testimonial', 'StoreTestimonial')->name('store.testimonial');
+ 	Route::get('/edit/testimonial/{id}', 'EditTestimonial')->name('edit.testimonial');
+ 	Route::post('/update/testimonial', 'UpdateTestimonial')->name('update.testimonial');
+ 	Route::get('/delete/testimonial/{id}', 'DeleteTestimonial')->name('delete.testimonial');
 });
