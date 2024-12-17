@@ -101,44 +101,24 @@
                 </li>
 
 
-                {{-- <li>
-                    <a href="#sidebarExpages" data-bs-toggle="collapse">
-                        <i data-feather="file-text"></i>
-                        <span> Utility </span>
+                <li>
+                    <a href="#GateWay" data-bs-toggle="collapse">
+                        <i data-feather="alert-octagon"></i>
+                        <span> Manage GateWay </span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarExpages">
+                    <div class="collapse" id="GateWay">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="pages-starter.html" class="tp-link">Starter</a>
+                                <a href="{{ route('gateway.one') }}" class="tp-link">Gateway One</a>
                             </li>
                             <li>
-                                <a href="pages-profile.html" class="tp-link">Profile</a>
+                                <a href="{{ route('gateway.two') }}" class="tp-link">Gateway Two</a>
                             </li>
-                            <li>
-                                <a href="pages-pricing.html" class="tp-link">Pricing</a>
-                            </li>
-                            <li>
-                                <a href="pages-timeline.html" class="tp-link">Timeline</a>
-                            </li>
-                            <li>
-                                <a href="pages-invoice.html" class="tp-link">Invoice</a>
-                            </li>
-                            <li>
-                                <a href="pages-faqs.html" class="tp-link">FAQs</a>
-                            </li>
-                            <li>
-                                <a href="pages-gallery.html" class="tp-link">Gallery</a>
-                            </li>
-                            <li>
-                                <a href="pages-maintenance.html" class="tp-link">Maintenance</a>
-                            </li>
-                            <li>
-                                <a href="pages-coming-soon.html" class="tp-link">Coming Soon</a>
-                            </li>
+
                         </ul>
                     </div>
-                </li> --}}
+                </li>
 
 
                 <li class="menu-title mt-2">General</li>

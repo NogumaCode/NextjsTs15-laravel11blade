@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\ServiceController;
+use App\Http\Controllers\Backend\GatewayController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -51,4 +52,11 @@ Route::controller(ServiceController::class)->group(function(){
     Route::get('/edit/service/{id}', 'EditService')->name('edit.service');
  	Route::post('/update/service', 'UpdateService')->name('update.service');
  	Route::get('/delete/service/{id}', 'DeleteService')->name('delete.service');
+});
+
+Route::controller(GatewayController::class)->group(function(){
+    Route::get('/gateway/one', 'GetWayOne')->name('gateway.one');
+ 	Route::post('/update/gateway/one', 'UpdateGetWayOne')->name('update.gateway.one');
+    Route::get('/gateway/two', 'GetWayTwo')->name('gateway.two');
+    Route::post('/update/gateway/two', 'UpdateGetWayTwo')->name('update.gateway.two');
 });
