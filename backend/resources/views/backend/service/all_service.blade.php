@@ -9,7 +9,7 @@
             </div>
             <div class="text-end">
                 <ol class="breadcrumb m-0 py-0">
-                     <a href="{{ route('add.slider') }}" class="btn btn-primary">Add Service </a>
+                    <a href="{{ route('add.service') }}" class="btn btn-primary">Add Service </a>
                 </ol>
             </div>
         </div>
@@ -38,8 +38,8 @@
             <td>{{ Str::limit($item->service_short, 30); }}</td>
             <td>{{ $item->icon }}</td>
             <td>
-      <a href="{{ route('edit.slider',$item->id) }}" class="btn btn-success btn-sm">Edit</a>
-      <a href="{{ route('delete.slider',$item->id) }}" class="btn btn-danger btn-sm" id="delete">Delete</a>
+                <a href="{{ route('edit.service',$item->id) }}" class="btn btn-success btn-sm">Edit</a>
+                <a href="{{ route('delete.service',$item->id) }}" class="btn btn-danger btn-sm" id="delete">Delete</a>
             </td>
         </tr>
   @endforeach
