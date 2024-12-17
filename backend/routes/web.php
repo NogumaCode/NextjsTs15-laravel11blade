@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\SliderController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,7 +26,19 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/profile', [ProfileController::class, 'AdminProfile'])->name('admin.profile');
     Route::post('/profile/store', [ProfileController::class, 'ProfileStore'])->name('profile.store');
     Route::post('/user/password/update', [ProfileController::class, 'PasswordUpdate'])->name('user.password.update');
-
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
+
+
+Route::middleware('auth')->group(function () {
+
+    Route::controller(SliderController::class)->group(function () {
+        Route::get('/all/slider', 'AllSlider')->name('all.slider');
+        Route::get('/add/slider', 'AddSlider')->name('add.slider');
+        Route::post('/store/slider', 'StoreSlider')->name('store.slider');
+        Route::get('/edit/slider/{id}', 'EditSlider')->name('edit.slider');
+        Route::post('/update/slider', 'UpdateSlider')->name('update.slider');
+        Route::get('/delete/slider/{id}', 'DeleteSlider')->name('delete.slider');
+    });
+});
