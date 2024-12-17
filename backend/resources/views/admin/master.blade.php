@@ -38,7 +38,11 @@
 
     </div>
     <!-- END wrapper -->
-    <x-footer-scripts />
+   <!-- Vendor -->
+   <x-footer-scripts></x-footer-scripts>
+
+
+
 </body>
 
 </html>
