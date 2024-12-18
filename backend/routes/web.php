@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\GatewayController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\AboutPageController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -89,7 +90,13 @@ Route::controller(BlogController::class)->group(function(){
  	Route::post('/update/blog/post', 'UpdateBlogPost')->name('update.blog.post');
      Route::get('/delete/blog/post/{id}', 'DeleteBlogPost')->name('delete.blog.post');
 });
+
 Route::controller(SettingController::class)->group(function(){
     Route::get('/site/setting', 'SiteSetting')->name('site.setting');
     Route::post('/update/site/setting', 'UpdateSiteSetting')->name('update.site.setting');
+});
+
+Route::controller(AboutPageController::class)->group(function(){
+    Route::get('/about/page', 'AboutPage')->name('about.page');
+    Route::post('/update/aboutus', 'UpdateAboutPage')->name('update.aboutus');
 });
