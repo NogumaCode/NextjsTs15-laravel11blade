@@ -139,6 +139,39 @@
                     </div>
                 </li>
 
+                <li>
+                    <a href="#BlogCategory" data-bs-toggle="collapse">
+                        <i data-feather="alert-octagon"></i>
+                        <span> BlogCategory </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="BlogCategory">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('blog.category') }}" class="tp-link">Blog Category</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#BlogPost" data-bs-toggle="collapse">
+                        <i data-feather="alert-octagon"></i>
+                        <span> Blog Post </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="BlogPost">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.blog.post') }}" class="tp-link">All Blog Post </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.blog.post') }}" class="tp-link">Add Blog Post </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
 
                 <li class="menu-title mt-2">General</li>
 
