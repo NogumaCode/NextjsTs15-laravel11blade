@@ -1,6 +1,5 @@
 @extends('admin.master')
 @section('admin')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <div class="content">
         <!-- Start Content-->
         <div class="container-xxl">
@@ -63,8 +62,6 @@
                                     <img id="showImage" src="{{ asset($about->image) }}"
                                         class="rounded-circle avatar-xxl img-thumbnail float-start" alt="image profile">
                                 </div>
-
-
                                 <div class="col-12">
                                     <button class="btn btn-primary" type="submit">Save Changes</button>
                                 </div>

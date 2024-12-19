@@ -1,7 +1,6 @@
 @extends('admin.master')
 @section('admin')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <div class="content">
+     <div class="content">
         <!-- Start Content-->
         <div class="container-xxl">
             <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
