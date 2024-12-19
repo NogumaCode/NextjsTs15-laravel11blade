@@ -2,7 +2,7 @@ export interface BreadType{
   link:string;
   img:string;
   title?:string;
-  desc?:string;
+  desc?: string | null;
   }
 export interface CounterType{
   classname:string;
@@ -23,11 +23,43 @@ export interface BlogItemType {
 export interface BlogListType {
   data: BlogItemType[];
 }
+
+export interface SliderType {
+  id: number;
+  heading: string;
+  description: string | null;
+  link: string;
+  image: string;
+  created_at: string | null;
+  updated_at: string | null;
+}
+
+export interface ServiceType {
+  id: number;
+  service_name: string;
+  slug: string;
+  service_short: string | null;
+  service_desc: string | null;
+  icon: string | null;
+  image: string | null;
+  created_at: string | null;
+  updated_at: string | null;
+
+}
+
 export interface ServiceItemType {
-  icon: string;
-  category: string;
-  title: string;
-  desc: string;
-  shortDesc: string;
-  number?: number;
+  data: ServiceType;
+  number: number;
+}
+
+export interface ServiceDetailsType {
+  id: number;
+  service_name: string;
+  slug: string;
+  service_short: string | null;
+  service_desc: string | null;
+  icon: string | null;
+  image: string | null;
+  created_at: string | null;
+  updated_at: string | null;
 }
