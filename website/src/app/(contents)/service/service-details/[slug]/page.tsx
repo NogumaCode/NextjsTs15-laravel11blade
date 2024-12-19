@@ -1,17 +1,45 @@
+"use client"
 import Breadcrumb from "@/components/breadcrumb";
+import Loader from "@/components/loader";
+import { IMAGE_BASE_URL } from "@/config/config";
+import useFetchServiceDetails from "@/hooks/useFetchServiceDetails";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { use } from "react";
 
-const ServiceDetails = () => {
+const ServiceDetails = ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = use(params);
+  const { serviceDetails, loading, error } = useFetchServiceDetails(slug);
+
+  const getTextFromHTML = (html: string | null): string => {
+    if (!html) return "";
+    const div = document.createElement("div");
+    div.innerHTML = html;
+    return div.textContent || div.innerText || "";
+  };
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-[500px]">
+        <Loader />
+      </div>
+    );
+  }
+  if (error) {
+    return <div className="text-center text-red-500">Error: {error}</div>;
+  }
+
+  if (!serviceDetails) {
+    return <div className="text-center">No service details found.</div>;
+  }
+
   return (
     <>
       <main className="content">
-        <Breadcrumb
+      <Breadcrumb
           link="Our Services Details"
           img="/images/header.webp"
-          title="Our Services Details"
-          desc="The jobs report soundly beat expectations, with job gains broadly spread across the economy and about 60% higher"
+          title={serviceDetails.service_name}
+          desc={serviceDetails.service_short}
         />
 
         <div className="content-detail-block lg:py-[100px] sm:py-16 py-10">
@@ -19,35 +47,18 @@ const ServiceDetails = () => {
             <div className="flex max-xl:flex-col gap-y-8">
               <div className="w-full xl:w-3/4">
                 <div className="w-full xl:pr-[80px]">
-                  <div className="heading3">Cryptocurrency Trading</div>
+                <div className="heading3">{serviceDetails.service_name}</div>
                   <div className="bg-img mt-5 mb-5">
-                    <Image
+                  <Image
                       width={5000}
                       height={5000}
                       className="w-full h-full rounded-xl"
-                      src="/images/assessment.webp"
-                      alt="img"
+                      src={`${IMAGE_BASE_URL}/${serviceDetails.image}`}
+                      alt={serviceDetails.service_name}
                     />
                   </div>
                   <div className="body2 text-secondary mt-4">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.  when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
+                    {getTextFromHTML(serviceDetails.service_desc)}
                   </div>
                 </div>
               </div>
@@ -97,7 +108,6 @@ const ServiceDetails = () => {
                     </Link>
                   </div>
                 </div>
-
                 <div className="ads-block rounded-lg md:mt-10 mt-6 relative">
                   <div className="bg-img">
                     <Image

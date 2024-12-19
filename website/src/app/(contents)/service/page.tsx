@@ -1,6 +1,5 @@
 import Breadcrumb from "@/components/breadcrumb";
 import Service from "@/components/top/service";
-import serviceData from "@/data/service.json";
 import Image from "next/image";
 
 const ServicePage = () => {
@@ -42,7 +41,7 @@ const ServicePage = () => {
             </div>
           </div>
         </div>
-        <Service data={serviceData} />
+        <Service />
       </main>
     </>
   );
