@@ -8,6 +8,13 @@ use App\Models\SiteSetting;
 
 class SiteSettingController extends Controller
 {
+    //// Site Setting Api
+    public function ApiSiteSetting(){
+        $site = SiteSetting::find(1);
+        return $site;
+    }
+    // End Method
+    
     public function SiteSetting(){
     	$site = SiteSetting::find(1);
     	return view('backend.setting.site_setting',compact('site'));
