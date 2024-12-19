@@ -8,6 +8,7 @@ use App\Models\Service;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
+
 class ServiceController extends Controller
 {
 
@@ -40,6 +41,23 @@ class ServiceController extends Controller
 
     public function StoreService(Request $request)
     {
+        // バリデーション
+        $request->validate([
+            'service_name' => 'required|string|max:255',
+            'service_short' => 'nullable|string',
+            'service_desc' => 'nullable|string',
+            'icon' => 'nullable|string|max:255',
+            'image' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048', // 必須の画像バリデーション
+        ], [
+            'service_name.required' => 'サービス名は必須項目です。',
+            'image.required' => 'サービス画像をアップロードしてください。',
+            'image.image' => 'アップロードされたファイルは画像でなければなりません。',
+            'image.mimes' => '画像形式は jpg、jpeg、png、gif のいずれかである必要があります。',
+            'image.max' => '画像のサイズは最大 2MB までです。',
+        ]);
+
+        // 画像処理
+        $save_url = null;
         if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
@@ -47,22 +65,26 @@ class ServiceController extends Controller
             $img = $manager->read($image);
             $img->resize(688, 436)->save(public_path('upload/service/' . $name_gen));
             $save_url = 'upload/service/' . $name_gen;
-            Service::create([
-                'service_name' => $request->service_name,
-                'slug' => strtolower(str_replace(' ', '-', $request->service_name)),
-                'service_short' => $request->service_short,
-                'service_desc' => $request->service_desc,
-                'icon' => $request->icon,
-                'image' => $save_url,
-            ]);
         }
 
-        $notification = array(
+        // サービスの登録
+        Service::create([
+            'service_name' => $request->service_name,
+            'slug' => strtolower(str_replace(' ', '-', $request->service_name)),
+            'service_short' => $request->service_short,
+            'service_desc' => $request->service_desc,
+            'icon' => $request->icon,
+            'image' => $save_url,
+        ]);
+
+        // 成功通知
+        $notification = [
             'message' => 'Service Inserted Successfully',
             'alert-type' => 'success'
-        );
+        ];
         return redirect()->route('all.service')->with($notification);
     }
+
 
     public function EditService($id)
     {
