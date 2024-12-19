@@ -63,3 +63,34 @@ export interface ServiceDetailsType {
   created_at: string | null;
   updated_at: string | null;
 }
+
+export interface GatewayType {
+  id: number;
+  title: string;
+  phone: string;
+  description: string | null;
+  image: string;
+  created_at: string | null;
+  updated_at: string | null;
+}
+
+export interface GatewayServiceType {
+  id: number;
+  title: string;
+  description: string | null;
+  project: string;
+  review: string;
+  experience: string;
+  image: string;
+  created_at: string | null;
+  updated_at: string | null;
+}
+
+export interface TestimonialType {
+  id: number;
+  name: string;
+  position: string;
+  message: string;
+  created_at: string | null;
+  updated_at: string | null;
+}

@@ -1,33 +1,27 @@
 "use client";
-import React from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css/bundle";
+import { ClipLoader } from "react-spinners";
+import useFetchTestimonials from "@/hooks/useFetchTestimonials";
+import { API_BASE_URL } from "@/config/config";
+import { TestimonialType } from "@/types/content";
 
 const Testimonial = () => {
-  const testimonialData = [
-    {
-      text: "Get personalized financial advice to help reach your financial goals. Get personalized financial advice to help reach your financial goals.",
-      author: "Kazi Ariyan // CEO",
-    },
-    {
-      text: "Get personalized financial advice to help reach your financial goals. Get personalized financial advice to help reach your financial goals.",
-      author: "Khan // Manager",
-    },
-  ];
+  const { testimonials, loading, error } = useFetchTestimonials(`${API_BASE_URL}/gettestimonial`);
 
-  const TestimonialSlide = ({
-    text,
-    author,
-  }: {
-    text: string;
-    author: string;
-  }) => (
-    <SwiperSlide className="lg:pb-24 pb-20">
-      <div className="text-2xl font-medium text-center">{`"${text}"`}</div>
-      <div className="text-button text-center mt-5">{author}</div>
-    </SwiperSlide>
-  );
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-[500px]">
+        <ClipLoader color="#3498db" size={50} />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <div className="text-center text-red-500">Error: {error}</div>;
+  }
 
   return (
     <>
@@ -38,6 +32,13 @@ const Testimonial = () => {
               <div className="heading3 text-center">
                 Trusted By Professionals
               </div>
+              {
+        loading ? (
+            <div className='flex justify-center items-center h-[500px]'>
+            <ClipLoader color='#3498db' size={50} />
+        </div>
+        ) : (
+
               <Swiper
                 spaceBetween={16}
                 slidesPerView={1}
@@ -50,15 +51,18 @@ const Testimonial = () => {
                   delay: 4000,
                 }}
               >
-                {/* 配列データをループしてスライドを生成 */}
-                {testimonialData.map((item, index) => (
-                  <TestimonialSlide
-                    key={index}
-                    text={item.text}
-                    author={item.author}
-                  />
-                ))}
+                {testimonials.slice(0,3).map((item: TestimonialType) => (
+            <SwiperSlide className='lg:pb-24 pb-20' key={item.id}>
+            <div className='text-2xl font-medium text-center'>
+                {String.raw`"`}{item.message} {String.raw`"`}
+            </div>
+            <div className='text-button text-center mt-5'>
+            {item.name} - {item.position}
+            </div>
+         </SwiperSlide>
+        ))}
               </Swiper>
+               )  }
             </div>
           </div>
         </div>

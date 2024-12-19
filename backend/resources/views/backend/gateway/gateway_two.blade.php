@@ -35,9 +35,9 @@
                                     <input type="text" name="review" class="form-control" value="{{ $gettwo->review }}">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="validationDefault01" class="form-label">Exerience</label>
-                                    <input type="text" name="exerience" class="form-control"
-                                        value="{{ $gettwo->exerience }}">
+                                    <label for="validationDefault01" class="form-label">experience</label>
+                                    <input type="text" name="experience" class="form-control"
+                                        value="{{ $gettwo->experience }}">
                                 </div>
                                 <div class="col-md-12">
                                     <label for="validationDefault01" class="form-label">Description</label>

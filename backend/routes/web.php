@@ -13,7 +13,7 @@ use App\Http\Controllers\Backend\AboutPageController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('top');
 
 Route::get('/dashboard', function () {
     return view('admin.index');

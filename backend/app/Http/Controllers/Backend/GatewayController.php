@@ -4,37 +4,38 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Gatewayone;
+use App\Models\Gateway;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
-use App\Models\GateWayTwo;
+use App\Models\GatewayService;
 
 class GatewayController extends Controller
 {
 
     // Start GetWay api
-    public function ApiGatewayOne()
+    public function ApiGateway()
     {
-        $getone = Gatewayone::find(1);
+        $getone = Gateway::find(1);
         return $getone;
     }
-    public function ApiGatewayTwo()
+
+    public function ApiGatewayService()
     {
-        $gettwo = GateWayTwo::find(1);
+        $gettwo = GatewayService::find(1);
         return $gettwo;
     }
     // End Service api
 
     public function GetWayOne()
     {
-        $getone = Gatewayone::find(1);
+        $getone = Gateway::find(1);
         return view('backend.gateway.gateway_one', compact('getone'));
     }
 
     public function UpdateGetWayOne(Request $request)
     {
         $getone_id = $request->id;
-        $getone = Gatewayone::find($getone_id);
+        $getone = Gateway::find($getone_id);
         if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
@@ -72,14 +73,14 @@ class GatewayController extends Controller
 
     public function GetWayTwo()
     {
-        $gettwo = GateWayTwo::find(1);
+        $gettwo = GatewayService::find(1);
         return view('backend.gateway.gateway_two', compact('gettwo'));
     }
 
     public function UpdateGetWayTwo(Request $request)
     {
         $gettwo_id = $request->id;
-        $gettwo = GateWayTwo::find($gettwo_id);
+        $gettwo = GatewayService::find($gettwo_id);
         if ($request->file('image')) {
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
@@ -95,7 +96,7 @@ class GatewayController extends Controller
                 'description' => $request->description,
                 'project' => $request->project,
                 'review' => $request->review,
-                'exerience' => $request->exerience,
+                'experience' => $request->experience,
                 'image' => $save_url,
             ]);
             $notification = array(
@@ -109,7 +110,7 @@ class GatewayController extends Controller
                 'description' => $request->description,
                 'project' => $request->project,
                 'review' => $request->review,
-                'exerience' => $request->exerience,
+                'experience' => $request->experience,
             ]);
             $notification = array(
                 'message' => 'Updated with Image Successfully',
