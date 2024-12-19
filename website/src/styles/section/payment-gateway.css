@@ -1,3 +1,14 @@
+.payment-infor {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: transform 0.7s ease, opacity 0.7s ease;
+  }
+
+  .payment-infor.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 .payment-gateway-one.style-second .container .content > div:last-child .right {
     position: relative;
 }

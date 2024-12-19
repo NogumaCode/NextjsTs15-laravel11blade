@@ -22,9 +22,9 @@ Route::get('/services', [ServiceController::class, 'AllServices']);
 Route::get('/service/{slug}', [ServiceController::class, 'getServiceBySlug']);
 
 ///  one api //
-Route::get('/gatewayone', [GatewayController::class, 'ApiGatewayOne']);
+Route::get('/gateways', [GatewayController::class, 'ApiGateway']);
 ///  Two api //
-Route::get('/gatewaytwo', [GatewayController::class, 'ApiGatewayTwo']);
+Route::get('/gateway_services', [GatewayController::class, 'ApiGatewayService']);
 
 ///  Testimonial api //
 Route::get('/gettestimonial', [TestimonialController::class, 'ApiGetTestimonial']);

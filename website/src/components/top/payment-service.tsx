@@ -1,13 +1,34 @@
 "use client";
+
+import { IMAGE_BASE_URL } from "@/config/config";
 import { Star } from "@phosphor-icons/react/dist/ssr";
 import { useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+import useFetchGatewayServices from "@/hooks/useFetchGatewayServices";
+import Loader from "@/components/loader";
 
 const PaymentGatewayService = () => {
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref as React.RefObject<Element>, { once: true });
+  const { gatewayService, loading, error } = useFetchGatewayServices();
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-[500px]">
+        <Loader />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <div className="text-center text-red-500">Error: {error}</div>;
+  }
+
+  if (!gatewayService) {
+    return <div className="text-center">No gateway service information found.</div>;
+  }
 
   return (
     <div>
@@ -18,12 +39,8 @@ const PaymentGatewayService = () => {
         <div className="container">
           <div className="content flex items-center gap-8">
             <div className="w-full xl:w-5/12 flex flex-col gap-y-6">
-              <h3 className="heading3">Payment Gateway Services</h3>
-              <div className="body3 text-secondary">
-                Get personalized financial advice to help reach your financial
-                goals. Get personalized financial advice to help reach your
-                financial goals.
-              </div>
+              <h3 className="heading3">{gatewayService.title}</h3>
+              <div className="body3 text-secondary">{gatewayService.description}</div>
 
               <div className="button-block">
                 <Link
@@ -45,25 +62,24 @@ const PaymentGatewayService = () => {
               >
                 <div className="bg-img relative w-full h-[700px]">
                   <Image
-                    src="/images/gateway2-bg.webp"
+                    src={`${IMAGE_BASE_URL}/${gatewayService.image}`}
                     alt="image"
                     fill
-                    style={{ objectFit: "cover" }} // `style.height`を削除
+                    style={{ objectFit: "cover" }}
                   />
                 </div>
 
                 <div className="feature-item py-4 px-6 rounded-2xl bg-white inline-flex items-center gap-4 box-shadow">
                   <i className="icon-list text-2xl p-4 rounded-2xl bg-red-400"></i>
                   <div className="text">
-                    <div className="heading7">2K+</div>
-                    <div className="heading7 text-secondary">Projects</div>
+                    <div className="heading7">{gatewayService.project}K+</div>
                   </div>
                 </div>
 
                 <div className="feature-item py-4 px-6 rounded-2xl bg-white inline-flex items-center gap-4 box-shadow">
                   <Star weight="fill" className="text-yellow-600 text-3xl" />
                   <div className="text">
-                    <div className="heading7">4.8</div>
+                    <div className="heading7">{gatewayService.review}</div>
                     <div className="heading7 text-secondary">Satisfaction</div>
                   </div>
                 </div>
@@ -71,10 +87,8 @@ const PaymentGatewayService = () => {
                 <div className="feature-item py-4 px-6 rounded-2xl bg-white inline-flex items-center gap-4 box-shadow">
                   <i className="icon-user text-2xl p-4 rounded-2xl bg-red-600"></i>
                   <div className="text">
-                    <div className="heading7">6 Years</div>
-                    <div className="heading7 text-secondary">
-                      Product Designer
-                    </div>
+                    <div className="heading7">{gatewayService.experience} Years</div>
+                    <div className="heading7 text-secondary">Product Designer</div>
                   </div>
                 </div>
               </div>
