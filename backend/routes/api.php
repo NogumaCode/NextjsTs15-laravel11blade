@@ -31,6 +31,7 @@ Route::get('/gettestimonial', [TestimonialController::class, 'ApiGetTestimonial'
 
 ///  Blog Category api //
 Route::get('/blogcat', [BlogController::class, 'ApiBlogCat']);
+Route::get('/category/{category_id}/blogs',[BlogController::class, 'getBlogsByCategory']);
 
 ///  Blog Post api //
 Route::get('/allblog', [BlogController::class, 'ApiAllBlog']);
