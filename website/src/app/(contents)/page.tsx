@@ -5,7 +5,6 @@ import Slider from "@/components/top/slider";
 import PaymentGatewayService from "@/components/top/payment-service";
 import FormRequest from "@/components/top/form-request";
 import Testimonial from "@/components/top/testimonial";
-import blogData from "@/data/blog.json";
 import LatestBlog from "@/components/top/blog";
 
 export default function Home() {
@@ -18,7 +17,7 @@ export default function Home() {
       <PaymentGatewayService />
       <FormRequest />
       <Testimonial />
-      <LatestBlog data={blogData} />
+      <LatestBlog />
     </main>
   );
 }
