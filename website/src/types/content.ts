@@ -131,3 +131,19 @@ export interface AboutType  {
   problem_solving: number;
   goal_achiever: number;
 };
+
+// src/types/content.ts
+export type SiteSettingType = {
+  address: string;
+  email: string;
+  facebook?: string;
+  youtube?: string;
+};
+
+export type FooterType = {
+  footer_message?: string;
+  facebook?: string;
+  youtube?: string;
+  phone?: string;
+  address?: string;
+};
