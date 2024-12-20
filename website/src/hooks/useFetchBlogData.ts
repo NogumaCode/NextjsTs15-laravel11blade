@@ -1,4 +1,4 @@
-
+"use client";
 
 import { useState, useEffect } from "react";
 import { BlogListType, CategoryType } from "@/types/content";
@@ -10,24 +10,24 @@ const useFetchBlogData = (apiBaseUrl: string) => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchBlogData = async () => {
+    const fetchData = async () => {
       try {
         setLoading(true);
 
-        // ブログデータの取得
-        const blogResponse = await fetch(`${apiBaseUrl}/allblog`);
-        if (!blogResponse.ok) {
-          throw new Error("Failed to fetch blogs");
-        }
-        const blogData: BlogListType[] = await blogResponse.json();
-        setBlogs(blogData);
+        // 並列リクエストの最適化
+        const [blogResponse, categoryResponse] = await Promise.all([
+          fetch(`${apiBaseUrl}/allblog`),
+          fetch(`${apiBaseUrl}/blogcat`),
+        ]);
 
-        // カテゴリデータの取得
-        const categoryResponse = await fetch(`${apiBaseUrl}/blogcat`);
-        if (!categoryResponse.ok) {
-          throw new Error("Failed to fetch categories");
+        if (!blogResponse.ok || !categoryResponse.ok) {
+          throw new Error("Failed to fetch blog or category data");
         }
-        const categoryData: CategoryType[] = await categoryResponse.json();
+
+        const [blogData, categoryData]: [BlogListType[], CategoryType[]] =
+          await Promise.all([blogResponse.json(), categoryResponse.json()]);
+
+        setBlogs(blogData);
         setCategories(categoryData);
       } catch (err) {
         setError((err as Error).message);
@@ -36,7 +36,7 @@ const useFetchBlogData = (apiBaseUrl: string) => {
       }
     };
 
-    fetchBlogData();
+    fetchData();
   }, [apiBaseUrl]);
 
   return { blogs, categories, loading, error };
