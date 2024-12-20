@@ -8,22 +8,6 @@ export interface CounterType{
   classname:string;
 }
 
-export interface BlogItemType {
-  id: number;
-  tag: string;
-  category: string;
-  img: string;
-  title: string;
-  author: string;
-  avatar: string;
-  date: string;
-  desc: string;
-  listImg: string[];
-}
-export interface BlogListType {
-  data: BlogItemType[];
-}
-
 export interface SliderType {
   id: number;
   heading: string;
@@ -94,3 +78,56 @@ export interface TestimonialType {
   created_at: string | null;
   updated_at: string | null;
 }
+
+export type BlogPostType = {
+  id: number;
+  blogcat_id: number;
+  post_title: string;
+  post_slug: string;
+  image: string;
+  long_descp: string | null;
+  created_at: string | null;
+  updated_at: string | null;
+  category_name: string; // 結合されたカテゴリー名を追加
+};
+
+export type BlogCategoryType = {
+  id: number;
+  blog_category: string;
+  slug: string;
+  created_at: string | null;
+  updated_at: string | null;
+};
+
+interface BaseType {
+  created_at: string | null;
+  updated_at: string | null;
+}
+
+export interface BlogListType extends BaseType {
+  id: number;
+  blogcat_id: number;
+  post_title: string;
+  post_slug: string;
+  image: string;
+  long_descp: string | null;
+  category_name?: string; // 関連するカテゴリ名
+}
+
+export interface CategoryType extends BaseType {
+  id: number;
+  blog_category: string;
+  slug: string;
+}
+
+export interface AboutType  {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  phone: string;
+  setup_growth: number;
+  passive_income: number;
+  problem_solving: number;
+  goal_achiever: number;
+};
