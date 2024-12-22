@@ -8,6 +8,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use App\Models\AboutPage;
 use App\Models\ContactPage;
+use Illuminate\Support\Facades\Validator; 
 
 class AboutPageController extends Controller
 {
@@ -90,5 +91,5 @@ class AboutPageController extends Controller
     	}
     	ContactPage::create($request->all());
     	return response()->json(['message' => 'Message send successfully'], 201);
-    } 
+    }
 }
