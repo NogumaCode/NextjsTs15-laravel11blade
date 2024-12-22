@@ -17,12 +17,15 @@ class AboutPageController extends Controller
     	$about = AboutPage::find(1);
     	return $about;
     }
+
     //// End About page Api
 
     public function AboutPage(){
     	$about = AboutPage::find(1);
     	return view('backend.about.about_us',compact('about'));
     }
+
+
 
     public function UpdateAboutPage(Request $request){
     	$about_id = $request->id;
@@ -74,4 +77,18 @@ class AboutPageController extends Controller
     	$contact = ContactPage::latest()->get();
     	return view('backend.contact.all_contact', compact('contact'));
     }
+
+    public function ContactSubmit(Request $request){
+    	$validator = Validator::make($request->all(), [
+    		'name' => 'required|string|max:255',
+    		'email' => 'required|email',
+    		'subject' => 'required|string',
+    		'message' => 'required|string',
+    	]);
+    	if ($validator->fails()) {
+    		return response()->json(['errors' => $validator->errors()], 422);
+    	}
+    	ContactPage::create($request->all());
+    	return response()->json(['message' => 'Message send successfully'], 201);
+    } 
 }

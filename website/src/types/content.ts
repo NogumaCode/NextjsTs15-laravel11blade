@@ -133,17 +133,24 @@ export interface AboutType  {
 };
 
 // src/types/content.ts
-export type SiteSettingType = {
+export interface SiteSettingType {
   address: string;
   email: string;
   facebook?: string;
   youtube?: string;
 };
 
-export type FooterType = {
+export interface FooterType {
   footer_message?: string;
   facebook?: string;
   youtube?: string;
   phone?: string;
   address?: string;
+};
+
+export interface ContactFormType {
+  name: string;
+  subject: string;
+  email: string;
+  message: string;
 };
