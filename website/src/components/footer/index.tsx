@@ -4,20 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import * as Icon from "@phosphor-icons/react/dist/ssr";
-
-import Loader from "@/components/loader";
 import useFetchFooterData from "@/hooks/useFetchFooterData";
 
 const Footer = () => {
-  const { footerData, loading, error } = useFetchFooterData();
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-[150px]">
-        <Loader />
-      </div>
-    );
-  }
+  const { footerData,  error } = useFetchFooterData();
 
   if (error) {
     return <div className="text-red-500 text-center">Error: {error}</div>;

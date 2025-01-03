@@ -21,16 +21,22 @@ const useContactForm = () => {
         body: JSON.stringify(formData),
       });
 
+      // レスポンスがHTMLの場合の対処
+      const contentType = response.headers.get("Content-Type");
+      if (!contentType || !contentType.includes("application/json")) {
+        throw new Error("Invalid response format. Expected JSON.");
+      }
+
+      // JSONレスポンスをパース
+      const data = await response.json();
       if (!response.ok) {
-        const errorData = await response.json();
         throw new Error(
-          errorData.error ? JSON.stringify(errorData.errors) : "Something went wrong"
+          data.error ? JSON.stringify(data.errors) : "Something went wrong"
         );
       }
 
       setSuccessMessage("Message sent successfully");
     } catch (error: unknown) {
-      // 型アサーションを使用してエラーを安全に処理
       if (error instanceof Error) {
         setErrorMessage(error.message);
       } else {
