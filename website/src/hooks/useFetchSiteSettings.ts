@@ -5,7 +5,6 @@ import { API_BASE_URL } from "@/config/config";
 
 const useFetchSiteSettings = () => {
   const [siteSettings, setSiteSettings] = useState<SiteSettingType | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -19,15 +18,13 @@ const useFetchSiteSettings = () => {
         setSiteSettings(data);
       } catch (err) {
         setError((err as Error).message);
-      } finally {
-        setLoading(false);
       }
     };
 
     fetchSettings();
   }, []);
 
-  return { siteSettings, loading, error };
+  return { siteSettings, error };
 };
 
 export default useFetchSiteSettings;

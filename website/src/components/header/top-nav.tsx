@@ -3,18 +3,9 @@
 import { Envelope, MapPin } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import useFetchSiteSettings from "@/hooks/useFetchSiteSettings";
-import Loader from "@/components/loader";
 
 const TopNav = () => {
-  const { siteSettings, loading, error } = useFetchSiteSettings();
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-[44px]">
-        <Loader />
-      </div>
-    );
-  }
+  const { siteSettings, error } = useFetchSiteSettings();
 
   if (error) {
     return <div className="text-red-500 text-center">Error: {error}</div>;

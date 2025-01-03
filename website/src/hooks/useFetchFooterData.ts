@@ -5,7 +5,6 @@ import { API_BASE_URL } from "@/config/config";
 
 const useFetchFooterData = () => {
   const [footerData, setFooterData] = useState<FooterType | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -19,15 +18,13 @@ const useFetchFooterData = () => {
         setFooterData(data);
       } catch (err) {
         setError((err as Error).message);
-      } finally {
-        setLoading(false);
       }
     };
 
     fetchFooterData();
   }, []);
 
-  return { footerData, loading, error };
+  return { footerData,  error };
 };
 
 export default useFetchFooterData;
